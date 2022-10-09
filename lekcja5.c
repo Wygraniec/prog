@@ -2,7 +2,7 @@
 
 void zadanie1() {
     int n, m;
-    printf("Podawanie calkowitych liczb n, m i podawanie wszystkich dodatnich iloczynów n, dla ktorych n < m\n");
+    printf("Podawanie calkowitych liczb n, m i podawanie wszystkich dodatnich iloczynÃ³w n, dla ktorych n < m\n");
     printf("Podaj liczbe n: "); scanf_s("%i", &n);
     printf("Podaj liczbe m: "); scanf_s("%i", &m);
 
