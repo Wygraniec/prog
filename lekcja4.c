@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-int main()
-{
+int main() {
     float a, b, c, delta;
 
     printf("Rozwazywanie rownan liniowych i kwadratowych\n");
