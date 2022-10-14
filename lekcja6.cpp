@@ -4,7 +4,7 @@ float wartoscBezwzgledna(float liczba) {
     return (liczba < 0) ? -1 * liczba:liczba;
 }
 
-int silniaIteracyjnie(int liczba) {
+unsigned long long silniaIteracyjnie(int liczba) {
     unsigned int silnia = 1;
 
     for (int i = liczba; i > 0; i--) silnia *= i;
@@ -12,15 +12,15 @@ int silniaIteracyjnie(int liczba) {
     return silnia;
 }
 
-int silniaRekurencyjnie(int liczbaDoSilni) {
-    if (liczbaDoSilni == 1) return 1;
-    int nastepnaLiczba = liczbaDoSilni - 1;
-    return liczbaDoSilni * silniaRekurencyjnie(nastepnaLiczba);
+unsigned long long silniaRekurencyjnie(unsigned int liczba) {
+    if (liczba == 0) return 1;
+    int nastepnaLiczba = liczba - 1;
+    return liczba * silniaRekurencyjnie(nastepnaLiczba);
 }
 
-void tabliczkaMnozenia(const int koniec) {
+void tabliczkaMnozenia(const unsigned int koniec) {
     for (int i = 1, j = 1; i <= koniec && j <= koniec; i++) {
-        printf(" %7i ", i * j);
+        printf(" %5i ", i * j);
         if (i == koniec) {
             i = 0;
             j++;
@@ -32,16 +32,16 @@ void tabliczkaMnozenia(const int koniec) {
 }
 
 int main() {
-    int doSilni, maksMnozenie;
-    float doWBezwzglednej;
+    unsigned int doSilni, maksMnozenie;
+    float modul;
 
-    printf("Podaj liczbe do obliczenia wartosci bezwzglednej: "); scanf_s("%f", &doWBezwzglednej);
-    printf("|%f| = %f", doWBezwzglednej, wartoscBezwzgledna(doWBezwzglednej));
+    printf("Podaj liczbe do obliczenia wartosci bezwzglednej: "); scanf("%f", &modul);
+    printf("|%f| = %f", modul, wartoscBezwzgledna(modul));
 
-    printf("\n\nPodaj liczbe do obliczenia silnii: "); scanf_s("%i", &doSilni);
-    printf("%i! = %i \n", doSilni, silniaRekurencyjnie(doSilni));
-    printf("%i! = %i ", doSilni, silniaIteracyjnie(doSilni));
+    printf("\n\nPodaj liczbe do obliczenia silnii: "); scanf("%i", &doSilni);
+    printf("%i! = %i \nmetoda rekurencyjna \n", doSilni, silniaRekurencyjnie(doSilni));
+    printf("\n%i! = %i \nmetoda iteracyjna \n", doSilni, silniaIteracyjnie(doSilni));
 
-    printf("\n\nPodaj wartosc koncowa tabliczki mnozenia: "); scanf_s("%i", &maksMnozenie);
+    printf("\nPodaj wartosc koncowa tabliczki mnozenia: "); scanf("%i", &maksMnozenie);
     tabliczkaMnozenia(maksMnozenie);
 }
