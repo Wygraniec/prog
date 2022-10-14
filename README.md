@@ -1,4 +1,4 @@
 # prog
 Pliki z zajęć programowania z dr Nowakiem w PLOPŁ
 
-Pliki są nazwane numerami lekcji i opisem
+Pliki są nazwane numerami lekcji
