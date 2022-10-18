@@ -10,7 +10,7 @@ int main()
 {
     float x1, y1, x2, y2;
 
-    printf("Obliczanie odleg³osci pomiêdzy dwoma punktami w kartezjanskim ukladzie wspolrzednych\n");
+    printf("Obliczanie odlegÅ‚osci pomiÄ™dzy dwoma punktami w kartezjanskim ukladzie wspolrzednych\n");
     
     printf("Podaj wspolrzedna X pierwszego punktu: "); scanf_s("%f", &x1);
     printf("Podaj wspolrzedna Y pierwszego punktu: "); scanf_s("%f", &y1);
