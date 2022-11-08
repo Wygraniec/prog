@@ -1,14 +1,15 @@
 #include <stdio.h>
 #define SIZE 4
 
-void sortowanie(float* tab, unsigned int size) {
-    for(int i = 0; i < size; i++)
-        for(int j = 0; j < size - i; j++)
-            if (tab[j - 1] > tab[j]) {
-                float temp = tab[j];
-                tab[j] = tab[j - 1];
-                tab[j - 1] = temp;
+void bubbleSort(float* tab, unsigned int size) {
+    for (int i = 0; i < size; i++)
+        for (int j = i; j < size; j++) 
+            if (tab[i] > tab[j]) {
+                float temp = tab[i];
+                tab[i] = tab[j];
+                tab[j] = temp;
             }
+                  
 }
 
 void wypiszTablice1D(float* tab, unsigned int size) {
@@ -47,9 +48,7 @@ static float mediana(float(&tab)[SIZE][SIZE]) {
             l++;
         }
 
-    sortowanie(liczby, rozmiarTablicy);
-
-    wypiszTablice1D(liczby, rozmiarTablicy);
+    bubbleSort(liczby, rozmiarTablicy);
 
     float mediana;
 
@@ -76,7 +75,7 @@ int main() {
     wypiszTablice2D(liczby);
     
     printf("Srednia liczb w tablicy to %f\n", sredniaTab(liczby));
-    printf("Mediana wynosi %f", mediana(liczby));
+    printf("Mediana wynosi %f\n\n", mediana(liczby));
 
     return 0;
 }
