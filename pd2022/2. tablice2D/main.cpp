@@ -3,7 +3,7 @@
 #include "wypisywanie.cpp"
 #define SIZE 4
 
-//Zdeiniowanie włącza "tryb deweloperski"
+//Zdefiniowanie włącza "tryb deweloperski"
 //#define DEBUG 
 
 void bubbleSort(float* tab, unsigned int size) {
