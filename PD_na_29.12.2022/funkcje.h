@@ -1,5 +1,4 @@
 #pragma once
-//#define DEBUG
 
 void wypiszTablice(float* tab, int size);
 
