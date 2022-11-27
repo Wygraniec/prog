@@ -1,3 +1,7 @@
+//----------------------------------------------------------------------------------------------------------------------
+//Zeby wejsc w tryb debugowania trzeba zdefiniowac DEBUG (#define DEBUG) w odpowiednim pliku (main.cpp lub funkcje.cpp)
+//----------------------------------------------------------------------------------------------------------------------
+
 #include <stdio.h>
 #include "funkcje.h"
 
