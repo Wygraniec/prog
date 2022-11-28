@@ -28,8 +28,6 @@ int main() {
     
     do {
         wybor = 0;
-        valMax = znajdzValMax(liczby, SIZE);
-        valMin = znajdzValMin(liczby, SIZE);
 
         printf("Wybierz dzialanie: \n");
         printf("0. Zakoncz program \n");
@@ -62,6 +60,8 @@ int main() {
             wypelnijTablice(liczby, SIZE);
             system("pause");
             system("cls");
+            valMax = znajdzValMax(liczby, SIZE);
+            valMin = znajdzValMin(liczby, SIZE);
             break;
 
         case 5:
