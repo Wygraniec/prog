@@ -59,9 +59,9 @@ int main() {
         case 4:
             wypelnijTablice(liczby, SIZE);
             system("pause");
-            system("cls");
             valMax = znajdzValMax(liczby, SIZE);
-            valMin = znajdzValMin(liczby, SIZE);
+            valMin = znajdzValMin(liczby, SIZE);                
+            system("cls");
             break;
 
         case 5:
