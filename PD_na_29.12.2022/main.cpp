@@ -66,6 +66,8 @@ int main() {
 
         case 5:
             zamienNajwiekszeNajmniejsze(liczby, SIZE, valMin, valMax);
+            printf("\nTablica po zamianie:");
+            wypiszTablice(tab, size);
             system("pause");
             system("cls");
             break;
