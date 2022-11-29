@@ -58,7 +58,4 @@ void zamienNajwiekszeNajmniejsze(float* tab, int size, float valMin, float valMa
             continue;
         }
     }
-
-    printf("\nTablica po zamianie:");
-    wypiszTablice(tab, size);
 }
