@@ -19,9 +19,9 @@ float znajdzValMax(float* tab, int size) {
         if (valMax < *(tab + i))
             valMax = *(tab + i);
 
-#ifdef DEBUG
-    printf("valMax w funkcji: %f\n", valMax);
-#endif
+    #ifdef DEBUG
+        printf("valMax w funkcji: %f\n", valMax);
+    #endif
 
     return valMax;
 }
@@ -33,9 +33,9 @@ float znajdzValMin(float* tab, int size) {
         if (valMin > *(tab + i))
             valMin = *(tab + i);
 
-#ifdef DEBUG
-    printf("valMin w funkcji: %f\n", valMin);
-#endif
+    #ifdef DEBUG
+        printf("valMin w funkcji: %f\n", valMin);
+    #endif
     return valMin;
 }
 
