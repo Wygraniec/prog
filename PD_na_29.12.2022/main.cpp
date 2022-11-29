@@ -20,7 +20,7 @@ int main() {
     zamienNajwiekszeNajmniejsze(liczby, SIZE, znajdzValMin(liczby, SIZE), znajdzValMax(liczby, SIZE));
 #endif
    
-    float valMax = 0, valMin = 0;
+    float valMax = znajdzValMax(liczby, SIZE), valMin = znajdzValMin(liczby, SIZE);
     int wybor = 0;
 
 #ifndef DEBUG
