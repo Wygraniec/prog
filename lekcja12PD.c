@@ -45,11 +45,16 @@ argumenty:
 
 #include <stdio.h>
 #define MAKS 100
+
+#ifdef _WIN32
+#include <windows.h>
+#endif
+
 //#define DEBUG
 
 char samogloski[] = { 'a','A', 'e','E', 'i','I', 'o','O', 'u','U', 'y','Y' };
 
-int dlugoscString(const char* word) {
+int dlugoscString(char* word) {
     int dlugosc = 0;
 
     while (*word) {
@@ -59,7 +64,7 @@ int dlugoscString(const char* word) {
     return dlugosc;
 }
 
-void zamienNaMale(const char* word) {
+void zamienNaMale(char* word) {
     while (*word) {
         if (*word >= 'A' && *word <= 'Z') {
             *word += 'a' - 'A';
@@ -68,7 +73,7 @@ void zamienNaMale(const char* word) {
     }
 }
 
-void zamienNaWielkie(const char* word) {
+void zamienNaWielkie(char* word) {
     while (*word) {
         if (*word >= 'a' && *word <= 'z') {
             *word -= 'a' - 'A';
@@ -77,7 +82,7 @@ void zamienNaWielkie(const char* word) {
     }
 }
 
-int znajdz(const char* word, char character) {
+int znajdz(char* word, char character) {
     for (int i = 0; *(word + i); i++)
         if (*(word + i) == character)
             return i;
@@ -85,7 +90,7 @@ int znajdz(const char* word, char character) {
     return -1;
 }
 
-bool isPart(const char* tab, char character) {
+bool isPart(char* tab, char character) {
     while (*tab) {
         if (*tab == character)
             return true;
@@ -95,7 +100,7 @@ bool isPart(const char* tab, char character) {
     return false;
 }
 
-int ileSamoglosek(const char* word) {
+int ileSamoglosek(char* word) {
     int counter = 0;
     while (*word) {
         if (isPart(samogloski, *word))
@@ -105,7 +110,7 @@ int ileSamoglosek(const char* word) {
     return counter;
 }
 
-int ileSpolglosek(const char* word) {
+int ileSpolglosek(char* word) {
     int counter = 0;
     while (*word) {
         if (!isPart(samogloski, *word) && *word != ' ')
@@ -115,7 +120,7 @@ int ileSpolglosek(const char* word) {
     return counter;
 }
 
-int iloscSlow(const char* word) {
+int iloscSlow(char* word) {
     int counter = 0;
     while (*word) {
         if (*word == ' ')
@@ -222,7 +227,7 @@ int main() {
             if (pos == -1) 
                 printf("Nie znaleziono znaku\n");
             else 
-                printf("Znak znaleziono na pozycji %i\n", pos);
+                printf("Znak jest %i znakiem w ciagu\n", pos + 1);
 
             break;
 
@@ -230,7 +235,13 @@ int main() {
             printf("Bledne polecenie\n");
             break;
         }
+
+#ifdef _WIN32
+        system("pause");
+        system("cls");
+#else
         printf("\n\n");
+#endif
     }
 #endif
 
