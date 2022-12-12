@@ -44,7 +44,7 @@ argumenty:
 */
 
 #include <stdio.h>
-#define MAKS 100
+#define MAKS 1000
 
 #ifdef _WIN32
 #include <windows.h>
@@ -135,13 +135,17 @@ int main() {
 #ifdef DEBUG
     char zdanie[] = "Ala ma kota.";
 #else
-    char zdanie[MAKS];
+    #ifdef MAKS
+        char zdanie[MAKS];
+    #else
+        char zdanie[100];
+    #endif
     printf("Podaj zdanie: ");
     gets_s(zdanie);
 #endif
 
 #ifdef DEBUG
-    printf("Slowo: %s\n", zdanie);
+    printf("Zdanie: %s\n", zdanie);
 
     printf("Dlugosc: %i znakow\n", dlugoscString(zdanie));
     printf("Samoglosek: %i\n", ileSamoglosek(zdanie));
@@ -157,7 +161,9 @@ int main() {
     int pos = znajdz(zdanie, 'z');
     if (pos == -1) printf("Nie znaleziono znaku\n");
     else printf("Znak znaleziono na pozycji %i\n", pos);
-
+#ifdef _WIN32
+    system("pause");
+#endif
 #else
 
     while (true) {
