@@ -44,7 +44,7 @@ argumenty:
 */
 
 #include <stdio.h>
-#define MAKS 1000
+#define MAKS 1000 //Maksymalna długość ciągu znaków; jeśli nie zdefiniowana tablica przyjmuje rozmiar 100
 
 #ifdef _WIN32
 #include <windows.h>
