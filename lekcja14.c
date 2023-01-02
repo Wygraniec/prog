@@ -1,8 +1,8 @@
 /* Notateczki
 *   Dostęp sekwencyjny:
-*   fputs() -> puts string
-*   fgets() -> get string
-*   feof() -> end of file
+*  fputs() -> puts string
+*  fgets() -> get string
+*  feof() -> end of file
 *   Tryb otwarcia:
 *       "w" -> write; tworzy nowy plik
 *       "r" -> read; odczyt z istniejącego pliku
@@ -10,8 +10,8 @@
 * 
 * Dostęp swobodny:
 *   fseek(wskaznik plikowy, (long) wartosc, poczatek (SEEK_SET; poczatek pliku || SEEK_CUR; bieżąca pozycja || SEEK_END; koniec pliku)) -> przesuniecie wskaznika o x w prawo
-*   fputc() -> puts char
-*   fsacnf() -> 
+*  fputc() -> puts char
+*  fscanf() -> scanf ale to pliku xD 
 *   Tryb otwarcia:
 *       "w+" -> write; tworzy nowy plik
 *       "r+" -> read; odczyt z istniejącego pliku
