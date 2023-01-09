@@ -2,14 +2,14 @@
 /*
 * malloc(rozmiar w B) -> zwraca wskaznik uniwersalny do przydzielonego obszaru, jezeli zostal zarezerwowany z powodzeniem
 * calloc(iloscElementow, wielkoscElementu) -> tak jak malloc alokuje obszar, ale inicjuje wartosci 0
-* realloc(wskaznik, nowyRozmiar) -> zmiana rozmiaru wczesniej przydzielonego obszaru 
+* realloc(wskaznik, nowyRozmiar) -> zmiana rozmiaru wczesniej przydzielonego obszaru
 * free(wskaznik) -> zwolnienie zarezerwowanego obszaru
 */
 
-// TODO
-// generator liczb pseudolosowych
-// cin: iloscLiczb
-// cout: tablica (i/lub zapis do pliku)
+//Kody błędów:
+// 0 - wszystko git
+// 1 - błąd otwarcia pliku
+// 2 - błąd alokacji tablicy
 
 #include <stdio.h>
 #include <random>
@@ -37,13 +37,14 @@ void openFile(FILE** file, const char* mode = "r", const char* fileName = "file.
 }
 
 void wypiszTablice(int* tab, unsigned int size) {
-    for (int i = 0; i < size; i++)
-        printf(" %d \n", *(tab + i));
+    for (unsigned int i = 0; i < size; i++)
+        printf("%d\n", *(tab + i));
 }
 
 int main() {
     srand(time(NULL));
-    
+
+#ifdef DEBUG
     int ileLiczb = 0;
     printf("Generator liczb pseudolosowych\n");
     printf("Ilosc liczb do losowania: "); scanf_s("%i", &ileLiczb);
@@ -65,27 +66,103 @@ Wybor:
     FILE* plik = NULL;
 
     printf("Czy chcesz zapisac liczby do pliku?\n");
-    printf("Podaj 1, jesli tak\n");
-    printf("Podaj 2, jesli nie\n");
+    printf("1, jesli tak\n");
+    printf("0, jesli nie\n");
     scanf_s("%d", &wybor);
 
     switch (wybor) {
-    case 1:
+    case 0:
         openFile(&plik, "w");
-        for (int i = 0; i < ileLiczb; i++) 
+        for (int i = 0; i < ileLiczb; i++)
             fprintf(plik, "%i\n", *(tab + i));
         printf("Pomyslnie zapisano do pliku\n");
         fclose(plik);
         break;
-    case 2:
+    case 0:
         break;
     default:
         printf("Podano nieprawidlowa liczbe\n\n");
         goto Wybor;
         break;
     }
+    
+
+
 
     free(tab);
+#else
+    int ileLiczb;
+    printf("Generator liczb pseudolosowych\n");
+    printf("Podaj ilosc losowanych liczb: "); scanf_s("%d", &ileLiczb);
+    int* tab = (int*)malloc(ileLiczb * sizeof(int));
+    if (tab == NULL) exit(2);
+    
+    for (int i = 0; i < ileLiczb; i++)
+        tab[i] = rand() % 10000;
 
+    while (true) {
+        FILE* plik = NULL;
+        int wybor;
+        printf("0. Zakoncz program\n");
+        printf("1. Zmien ilosc liczb\n");
+        printf("2. Wyswietl wylosowane liczby w konsoli\n");
+        printf("3. Zapisz wylosowane liczby w pliku\n");
+        printf("4. Wylosuj liczby na nowo\n");
+        printf("Wybor: "); scanf_s("%i", &wybor);
+
+        switch (wybor) {
+        case 0:
+            exit(0);
+            break;
+        case 1:
+            printf("Podaj nowy rozmiar tablicy: ");
+            scanf_s("%d", &ileLiczb);
+            if( (int*)realloc(tab, ileLiczb * sizeof(int)) == NULL ) exit(2);
+            for (int i = 0; i < ileLiczb; i++) // Dolosowywanie nowych liczb do tablicy
+                tab[i] = rand();
+#ifdef _WIN32
+            system("pause");
+            system("cls");
+#endif
+            break;
+        case 2:
+            wypiszTablice(tab, ileLiczb);
+#ifdef _WIN32
+            system("pause");
+            system("cls");
+#endif
+            break;
+        case 3:
+            openFile(&plik, "w");
+            for (int i = 0; i < ileLiczb; i++)
+                fprintf(plik, "%i\n", *(tab + i));
+            printf("Pomyslnie zapisano do pliku\n");
+            fclose(plik);
+#ifdef _WIN32
+            system("pause");
+            system("cls");
+#endif
+            break;
+        case 4:
+            for (int i = 0; i < ileLiczb; i++)
+                tab[i] = rand() % 10000;
+            printf("Wylosowano nowe liczby\n");
+#ifdef _WIN32
+            system("pause");
+            system("cls");
+#endif
+            break;
+        default:
+            printf("Podano niepoprawne polecenie\n");
+#ifdef _WIN32
+            system("pause");
+            system("cls");
+#endif
+            break;
+        }
+
+    }
+    free(tab);
+#endif
     return 0;
 }
