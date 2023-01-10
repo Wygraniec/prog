@@ -7,12 +7,11 @@ int tab[SIZE]{ 0 };
 int id = 0;
 
 void moveByOne(int* tab) {
-    for (int i = SIZE; i > 0; i--) {
-        tab[i - 1] = tab[i];
-#ifdef DEBUG
-        printf("%d", tab[i - 1]);
-#endif
+    int temp = tab[0];
+    for (int i = 0; i < SIZE - 1; i++) {
+        tab[i] = tab[i + 1];
     }
+    tab[SIZE - 1] = temp;
 }
 
 int pop() {
