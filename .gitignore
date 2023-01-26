@@ -1,0 +1,6 @@
+
+queue/.vs/queue/v17/.suo
+*.db
+*.db-shm
+*.db-wal
+*.opendb
