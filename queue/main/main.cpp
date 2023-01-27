@@ -34,6 +34,7 @@
 // Returns true if defined queue type is an integer and false if it's a floating point number
 inline bool isTypeInt() { return (4.5 == (QUEUE_TYPE)4.5) ? false : true; }
 
+// It handles printf with define queue type
 inline void printApropriateFormat(QUEUE_TYPE val) {
     if (isTypeInt())
         printf("%d", val);
@@ -41,6 +42,7 @@ inline void printApropriateFormat(QUEUE_TYPE val) {
         printf("%f", val);
 }
 
+// It handles scanf with defined queue type
 inline void scanApropriateFormat(QUEUE_TYPE* val) {
     if (isTypeInt())
         scanf_s("%d", val);
@@ -99,20 +101,20 @@ int main() {
 
         case 4:
             //Check if empty
-            if (isEmpty()) {
+            if (isEmpty()) 
                 printf("Kolejka jest pusta\n");
-            } else {
+            else 
                 printf("Kolejka nie jest pusta\n");
-            }
+            
             break;
 
         case 5:
             //Check if full
-            if (isFull()) {
+            if (isFull()) 
                 printf("Kolejka jest pelna\n");
-            } else {
+            else 
                 printf("Kolejka nie jest pelna\n");
-            }
+            
             break;
 
         default:

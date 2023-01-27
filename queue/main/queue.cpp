@@ -1,10 +1,13 @@
 #include <stdio.h>
 #include "queue.h"
 
-QUEUE_TYPE array[QUEUE_SIZE] = { 0 };
-size_t pushID = 0;
-size_t popId = 0;
+private:
+QUEUE_TYPE queue[QUEUE_SIZE] = { 0 };
 
+size_t nextPushID = 0;
+size_t nextPopId = 0;
+
+//public:
 bool isEmpty() {
 	return false;
 }
