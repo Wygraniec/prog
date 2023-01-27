@@ -31,6 +31,16 @@
     }
 #endif
 
+// Returns true if defined queue type is an integer and false if it's a floating point number
+inline bool isTypeInt() { return (4.5 == (QUEUE_TYPE)4.5) ? false : true; }
+
+inline void printApropriateFormat(QUEUE_TYPE val) {
+    if (isTypeInt())
+        printf("%ll", val);
+    else
+        printf("%f", val);
+}
+
 int main() {
 
     while (true) {

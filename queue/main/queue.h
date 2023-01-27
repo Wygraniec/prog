@@ -3,7 +3,8 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
-//Maximum size of a queue in elements ( in bytes it is QUEUE_SIZE * sizeof(QUEUE_TYPE) )
+//Maximum size of a queue in elements 
+// it's size in bytes is QUEUE_SIZE * sizeof(QUEUE_TYPE)
 #define QUEUE_SIZE 5
 
 //Type of elements in queue

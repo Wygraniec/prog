@@ -3,6 +3,7 @@
 
 QUEUE_TYPE array[QUEUE_SIZE] = { 0 };
 
+
 bool isEmpty() {
 	return false;
 }
