@@ -1,3 +1,6 @@
 ﻿  main.cpp
-  LINK : G:\progProjects\git\Nowaczek\queue\x64\Debug\main.exe not found or not built by the last incremental link; performing full link
+G:\progProjects\git\Nowaczek\queue\main\main.cpp(39,16): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'double'
+G:\progProjects\git\Nowaczek\queue\main\main.cpp(46,17): warning C4477: 'scanf_s' : format string '%d' requires an argument of type 'int *', but variadic argument 1 has type 'float *'
+  queue.cpp
+  Generating Code...
   main.vcxproj -> G:\progProjects\git\Nowaczek\queue\x64\Debug\main.exe

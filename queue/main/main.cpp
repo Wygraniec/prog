@@ -36,15 +36,23 @@ inline bool isTypeInt() { return (4.5 == (QUEUE_TYPE)4.5) ? false : true; }
 
 inline void printApropriateFormat(QUEUE_TYPE val) {
     if (isTypeInt())
-        printf("%ll", val);
+        printf("%d", val);
     else
         printf("%f", val);
+}
+
+inline void scanApropriateFormat(QUEUE_TYPE* val) {
+    if (isTypeInt())
+        scanf_s("%d", val);
+    else
+        scanf_s("%f", val);
 }
 
 int main() {
 
     while (true) {
         int selection = 0;
+        QUEUE_TYPE inputNum = 0;
         printMenu();
         scanf_s("%d", &selection);
 
@@ -56,14 +64,37 @@ int main() {
 
         case 1:
             //Add value
+            if (isFull()) {
+                printf("Nie mozna dodac nowej wartosci\nKolejka jest pelna\n");
+                break;
+            }
+
+            printf("Podaj wartosc: ");
+            scanApropriateFormat(&inputNum);
+            push(inputNum);
+
             break;
 
         case 2:
             //Check first value
+            if (isEmpty()) {
+                printf("Nie mozna odczytac wartosci\nKolejka jest pusta\n");
+                break;
+            }
+
+            printf("Pierwsza wartosc: "); printApropriateFormat(first());
+
             break;
 
         case 3:
             //Delete first value and return it
+            if (isEmpty()) {
+                printf("Nie mozna odczytac wartosci\nKolejka jest pusta\n");
+                break;
+            }
+
+            printf("Usunieta wartosc: "); printApropriateFormat(pop());
+
             break;
 
         case 4:
@@ -89,8 +120,6 @@ int main() {
             break;
 
         }
-
-
 
     }
 

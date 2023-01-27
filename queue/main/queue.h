@@ -15,6 +15,6 @@ bool isEmpty();
 bool isFull();
 QUEUE_TYPE pop();
 QUEUE_TYPE first();
-QUEUE_TYPE push();
+QUEUE_TYPE push(QUEUE_TYPE);
 
 #endif
