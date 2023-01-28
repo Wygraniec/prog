@@ -1,6 +1,4 @@
 ﻿  main.cpp
 G:\progProjects\git\Nowaczek\queue\main\main.cpp(42,16): warning C4477: 'printf' : format string '%f' requires an argument of type 'double', but variadic argument 1 has type 'int'
 G:\progProjects\git\Nowaczek\queue\main\main.cpp(50,17): warning C4477: 'scanf_s' : format string '%f' requires an argument of type 'float *', but variadic argument 1 has type 'int *'
-  queue.cpp
-  Generating Code...
   main.vcxproj -> G:\progProjects\git\Nowaczek\queue\x64\Debug\main.exe

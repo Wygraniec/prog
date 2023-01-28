@@ -1,13 +1,11 @@
 #include <stdio.h>
 #include "queue.h"
 
-private:
 QUEUE_TYPE queue[QUEUE_SIZE] = { 0 };
 
 size_t nextPushID = 0;
-size_t nextPopId = 0;
+size_t nextPopID = 0;
 
-//public:
 bool isEmpty() {
 	return false;
 }
@@ -21,9 +19,17 @@ QUEUE_TYPE pop() {
 }
 
 QUEUE_TYPE first() {
-	return 1;
+	return queue[nextPopID];
 }
 
-QUEUE_TYPE push(QUEUE_TYPE val) {
-	return 1;
+void push(QUEUE_TYPE val) {
+	queue[nextPushID] = val;
+	nextPushID++;
+}
+
+void printTab() {
+	printf("\n");
+	for (size_t i = 0; i < QUEUE_SIZE; i++)
+		printf("%5d", queue[i]);
+	printf("\n");
 }

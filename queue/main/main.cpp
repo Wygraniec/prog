@@ -5,7 +5,7 @@
 // else (system is linux or macos) in place of system("cls") there is printf("\n\n")
 #ifdef _WIN32
     #include <Windows.h>
-    void printMenu() {
+    inline void printMenu() {
         system("pause");
         system("cls");
 
@@ -18,7 +18,7 @@
         printf("Wybor: ");
     }
 #else 
-    void printMenu() {
+    inline void printMenu() {
     printf("\n\n\n");
 
     printf("0. Zakoncz program\n");
@@ -65,7 +65,7 @@ int main() {
             break;
 
         case 1:
-            //Add value
+            //Add new value
             if (isFull()) {
                 printf("Nie mozna dodac nowej wartosci\nKolejka jest pelna\n");
                 break;
@@ -122,6 +122,11 @@ int main() {
             break;
 
         }
+
+#ifdef DEBUG
+        printTab();
+#endif
+
 
     }
 

@@ -1,5 +1,7 @@
 #pragma once
 
+#define DEBUG
+
 #ifndef QUEUE_H
 #define QUEUE_H
 
@@ -25,5 +27,9 @@ QUEUE_TYPE first();
 
 // Adds new element to the queue
 void push(QUEUE_TYPE);
+
+#ifdef DEBUG
+void printTab();
+#endif
 
 #endif
