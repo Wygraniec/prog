@@ -1,6 +1,7 @@
 #pragma once
 
 #ifndef QUEUE_H
+
 #define QUEUE_H
 
 // Maximum size of the queue in elements 
