@@ -2,34 +2,40 @@
 #include "queue.h"
 
 QUEUE_TYPE queue[QUEUE_SIZE] = { 0 };
-
+	
+// Index where push function will be executed
 size_t nextPushID = 0;
+
+// Index of the next element on which pop() function will be executed
 size_t nextPopID = 0;
 
-bool isEmpty() {
-	return false;
-}
+// Counter of elements currently stored in the queue
+unsigned int elementsCounter = 0;
 
-bool isFull() {
-	return false;
-}
+bool isEmpty() { return (elementsCounter == 0) ? true : false; }
+
+bool isFull() { return (elementsCounter == QUEUE_SIZE) ? true : false; }
 
 QUEUE_TYPE pop() {
-	return 1;
+	QUEUE_TYPE temp = queue[nextPopID];;
+	nextPopID++;
+
+	if (nextPopID >= 5)
+		nextPopID = 0;
+
+	elementsCounter--;
+
+	return temp;
 }
 
-QUEUE_TYPE first() {
-	return queue[nextPopID];
-}
+QUEUE_TYPE first() { return queue[nextPopID]; }
 
 void push(QUEUE_TYPE val) {
 	queue[nextPushID] = val;
 	nextPushID++;
-}
 
-void printTab() {
-	printf("\n");
-	for (size_t i = 0; i < QUEUE_SIZE; i++)
-		printf("%5d", queue[i]);
-	printf("\n");
+	if (nextPushID >= 5)
+		nextPushID = 0;
+
+	elementsCounter++;
 }

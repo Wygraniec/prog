@@ -1,7 +1,5 @@
 #pragma once
 
-#define DEBUG
-
 #ifndef QUEUE_H
 #define QUEUE_H
 
@@ -11,7 +9,7 @@
 
 // Type of elements in the queue
 // Allowed types: (unsigned) int, long, float, double, long double 
-#define QUEUE_TYPE int
+#define QUEUE_TYPE float
 
 // Checks if the queue is empty
 bool isEmpty();
@@ -27,9 +25,5 @@ QUEUE_TYPE first();
 
 // Adds new element to the queue
 void push(QUEUE_TYPE);
-
-#ifdef DEBUG
-void printTab();
-#endif
 
 #endif

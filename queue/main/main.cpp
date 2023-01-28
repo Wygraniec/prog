@@ -6,9 +6,14 @@
 #ifdef _WIN32
     #include <Windows.h>
     inline void printMenu() {
+        // Pause programme and waiting for any key to be continued
         system("pause");
+        printf("\n");
+
+        // Clear the terminal windows
         system("cls");
 
+        // Print the menu
         printf("0. Zakoncz program\n");
         printf("1. Dodaj liczbe do kolejki (push)\n");
         printf("2. Odczytaj pierwsza wartosc z kolejki (front)\n");
@@ -40,6 +45,7 @@ inline void printApropriateFormat(QUEUE_TYPE val) {
         printf("%d", val);
     else
         printf("%f", val);
+    printf("\n");
 }
 
 // It handles scanf with defined queue type
