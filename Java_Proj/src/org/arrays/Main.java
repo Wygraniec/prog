@@ -21,6 +21,9 @@ public class Main {
         System.out.print("Podaj wymiary tablicy (w formacie rozmiarX rozmiarY): ");
         int sizeX = stdin.nextInt();
         int sizeY = stdin.nextInt();
+
+        if(sizeX <= 0 || sizeY <= 0) System.exit(1);
+
         Array2D<Integer> arr = new Array2D<>(sizeX, sizeY);
         
         for(int rowID = 0; rowID < arr.getSizeX(); rowID++)
