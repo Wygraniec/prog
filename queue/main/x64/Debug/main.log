@@ -1,4 +1,0 @@
-﻿  main.cpp
-G:\progProjects\git\Nowaczek\queue\main\main.cpp(45,16): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'double'
-G:\progProjects\git\Nowaczek\queue\main\main.cpp(54,17): warning C4477: 'scanf_s' : format string '%d' requires an argument of type 'int *', but variadic argument 1 has type 'float *'
-  main.vcxproj -> G:\progProjects\git\Nowaczek\queue\x64\Debug\main.exe
