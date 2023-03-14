@@ -14,7 +14,10 @@ public class Rectangle {
         setSides(side1, side2);
     }
     public double calculateField() { return side1 * side2; }
-
+    public double calculateDiagonal() { return pythagoreanTheorem(side1, side2); }
+    private double pythagoreanTheorem(final double side1, final double side2) {
+        return Math.sqrt(Math.pow(side1, 2) + Math.pow(side2, 2));
+    }
     @Override
     public String toString() {
         return "Rectangle{" +
