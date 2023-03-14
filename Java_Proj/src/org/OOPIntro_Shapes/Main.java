@@ -8,7 +8,7 @@ public class Main {
         Square square = new Square(stdin.nextDouble());
 
         System.out.println(square.calculateField());
-        square.setSide(-5);
+        square.setSide(6);
         System.out.println(square.toString());
     }
 }
