@@ -3,6 +3,8 @@ package org.OOPIntro_Shapes;
 public class Square {
     private double side;
     public double getSide() { return side; }
+    /** Method setting both side's length and performing error-checking<br>
+     *  Side's length must be positive numbers*/
     public void setSide(final double side) throws ArithmeticException {
         if(side <= 0) throw new ArithmeticException("Side's length must be a positive number");
         this.side = side;
