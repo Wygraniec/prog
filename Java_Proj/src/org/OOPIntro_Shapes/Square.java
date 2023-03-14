@@ -7,11 +7,9 @@ public class Square {
         if(side <= 0) throw new ArithmeticException("Side's length must be a positive number");
         this.side = side;
     }
-
     public Square(final double side) { setSide(side); }
-
     public double calculateField() { return side * side; }
-
+    public double calculateDiagonal() { return side * Math.sqrt(2); }
     @Override
     public String toString() {
         return "Square{" +
