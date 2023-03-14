@@ -28,7 +28,7 @@ public class Main {
         double tempLength = stdin.nextDouble();
         System.out.print("Enter the rectangle's second side's length: ");
         Rectangle rectangle = new Rectangle(tempLength, stdin.nextDouble());
-        
+
         while(true) {
             System.out.println("0. Close the programme");
             System.out.println("1. Square");
