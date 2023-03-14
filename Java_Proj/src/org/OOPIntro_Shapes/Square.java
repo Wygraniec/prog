@@ -2,7 +2,7 @@ package org.OOPIntro_Shapes;
 
 public class Square {
     private double side;
-    public double getSide() { return this.side; }
+    public double getSide() { return side; }
     public void setSide(final double side) throws ArithmeticException {
         if(side <= 0) throw new ArithmeticException("Side's length must be a positive number");
         this.side = side;
@@ -10,7 +10,7 @@ public class Square {
 
     public Square(final double side) { setSide(side); }
 
-    public double calculateField() { return this.side * this.side; }
+    public double calculateField() { return side * side; }
 
     @Override
     public String toString() {
