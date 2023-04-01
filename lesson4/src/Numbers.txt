@@ -1,2 +1,0 @@
-Randomized numbers: 
-[2, 32, 29, 33, 20, 28]
