@@ -7,7 +7,7 @@ public class Main {
         for(ResizeableShape shape : shapes) {
             if(shape == null) continue;
 
-            System.out.println(shape.toString());
+            System.out.println(shape);
             System.out.printf("The shape's field is equal to %f %n", shape.calculateField());
             System.out.printf("The shape's circumference is equal to %f %n", shape.calculateCircumference());
             System.out.println();
