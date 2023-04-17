@@ -1,4 +1,4 @@
-package com.arrays;
+package com.No1_arrays;
 
 import java.util.Arrays;
 

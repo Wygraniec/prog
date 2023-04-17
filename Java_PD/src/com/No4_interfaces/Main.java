@@ -1,4 +1,4 @@
-package com.interfaces;
+package com.No4_interfaces;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.polymorphismShapes;
+package com.No3_polymorphismShapes;
 
 public class EquilateralTriangle extends Shape {
     private final double side;

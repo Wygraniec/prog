@@ -1,4 +1,4 @@
-package com.polymorphismShapes;
+package com.No3_polymorphismShapes;
 
 public class Rectangle extends Shape{
 
