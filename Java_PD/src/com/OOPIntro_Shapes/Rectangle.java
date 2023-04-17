@@ -1,4 +1,4 @@
-package org.OOPIntro_Shapes;
+package com.OOPIntro_Shapes;
 public class Rectangle {
     private double side1, side2;
     public double getSide1() { return side1; }

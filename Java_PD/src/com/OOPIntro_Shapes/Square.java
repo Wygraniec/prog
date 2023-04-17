@@ -1,4 +1,4 @@
-package org.OOPIntro_Shapes;
+package com.OOPIntro_Shapes;
 
 public class Square {
     private double side;

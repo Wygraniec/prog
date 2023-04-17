@@ -1,4 +1,4 @@
-package org.OOPIntro_Shapes;
+package com.OOPIntro_Shapes;
 import java.util.Scanner;
 public class Main {
     /** Prints the actions that can be performed on rectangle and square */

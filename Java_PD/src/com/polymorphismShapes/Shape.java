@@ -1,4 +1,4 @@
-package org.polymorphismShapes;
+package com.polymorphismShapes;
 
 public abstract class Shape {
     abstract public double calculateField();

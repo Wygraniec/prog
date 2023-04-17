@@ -1,4 +1,4 @@
-package org.arrays;
+package com.arrays;
 import java.util.Scanner;
 public class Main {
     static Boolean debug = false;
