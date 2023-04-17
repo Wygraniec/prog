@@ -1,7 +1,14 @@
 package com.No4_interfaces;
 
 public interface Logger {
+    /** Logs a message as one of a selected level
+     * @param level level of message (for instance Message or Warning)
+     * */
     void log(String level);
+    /** Logs a message as one of a selected level
+     * @param level level of message (for instance Message or Warning)
+     * @param text description of event to be logged
+     * */
     void log(String level, String text);
 
     default void information() {

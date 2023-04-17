@@ -22,18 +22,18 @@ public class FileLogger implements Logger{
 
         log("Information", "Created log file");
     }
-
+    @Override
     public void log(String level) {
         writer.println("\n|=====================================================================================|");
         writer.printf(" Timestamp: %s %n [%s] -> System logged %s with no description %n",
                 LocalDateTime.now(), level, level.toLowerCase());
         writer.println("|=====================================================================================|\n");
     }
+    @Override
     public void log(String level, String text) {
         writer.println("\n|=====================================================================================|");
         writer.printf(" Timestamp: %s %n [%s] -> %s %n",
                 LocalDateTime.now(), level, text);
         writer.println("|=====================================================================================|\n");
     }
-
 }

@@ -3,7 +3,6 @@ package com.No4_interfaces;
 import java.time.LocalDateTime;
 
 public class ConsoleLogger implements Logger {
-
     public void log(String level) {
         System.out.println("\n|=====================================================================================|");
         System.out.printf(" Timestamp: %s %n [%s] -> System logged %s with no description %n",
