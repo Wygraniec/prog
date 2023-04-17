@@ -1,5 +1,6 @@
 package com.interfaces;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -7,72 +8,79 @@ import java.time.LocalDateTime;
 
 public class FileLogger implements Logger{
     private PrintWriter writer;
-    public FileLogger() {
+    private File file;
+    /** Creates a new PrintWriter object and assigns it to the "writer" field and <br>
+     * creates a new File object and assigns it to the file field
+     * @param path path to the file to which data will be printed*/
+    private void openFileWriter(final String path) {
+        file = new File(path);
         try {
             writer = new PrintWriter(
-                    new FileWriter("log.txt", true)
+                    new FileWriter(file)
             );
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    private void logCreation() {
+        writer.println("\n|=====================================================================================|");
+        writer.printf(" Timestamp: %s %n [Information] -> Created a log object %n",
+                LocalDateTime.now());
+        writer.println("|=====================================================================================|\n");
+    }
+    public FileLogger() {
+        this.openFileWriter("log.txt");
+        this.logCreation();
+    }
+
     public FileLogger(String path) {
-        try {
-            writer = new PrintWriter(
-                    new FileWriter(path, true)
-            );
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        this.openFileWriter(path);
+        this.logCreation();
+    }
+
+    private void log(String level) {
+        writer.println("\n|=====================================================================================|");
+        writer.printf(" Timestamp: %s %n [%s] -> System logged an information with no description %n",
+                LocalDateTime.now(), level);
+        writer.println("|=====================================================================================|\n");
+    }
+
+    private void log(String level, String text) {
+        writer.println("\n|=====================================================================================|");
+        writer.printf(" Timestamp: %s %n [%s] -> %s %n",
+                LocalDateTime.now(), level, text);
+        writer.println("|=====================================================================================|\n");
     }
 
     @Override
     public void information() {
-        writer.println("\n|=====================================================================================|");
-        writer.printf(" Timestamp: %s %n [Information] -> System logged an information with no description %n",
-                LocalDateTime.now());
-        writer.println("|=====================================================================================|\n");
+        log("Information");
     }
 
     @Override
     public void information(String text) {
-        writer.println("\n|=====================================================================================|");
-        writer.printf(" Timestamp: %s %n [Information] -> %s %n",
-                LocalDateTime.now(), text);
-        writer.println("|=====================================================================================|\n");
+        log("Information", text);
     }
 
     @Override
     public void warning() {
-        writer.println("\n|=====================================================================================|");
-        writer.printf(" Timestamp: %s %n [Warning] -> System logged a warning with no description %n",
-                LocalDateTime.now());
-        writer.println("|=====================================================================================|\n");
+        log("Warning");
     }
 
     @Override
     public void warning(String text) {
-        writer.println("\n|=====================================================================================|");
-        writer.printf(" Timestamp: %s %n [Warning] -> %s %n",
-                LocalDateTime.now(), text);
-        writer.println("|=====================================================================================|\n");
+        log("Warning", text);
     }
 
     @Override
     public void error() {
-        writer.println("\n|=====================================================================================|");
-        writer.printf(" Timestamp: %s %n [Error] -> System logged an error with no description %n",
-                LocalDateTime.now());
-        writer.println("|=====================================================================================|\n");
+        log("Error");
     }
 
     @Override
     public void error(String text) {
-        writer.println("/n|=====================================================================================|");
-        writer.printf(" Timestamp: %s %n [Error] -> %s %n",
-                LocalDateTime.now(), text);
-        writer.println("|=====================================================================================|/n");
+        log("Error", text);
     }
 
 }
