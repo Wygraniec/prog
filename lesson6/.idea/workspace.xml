@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="51a27d3a-a087-4c0d-a61a-8dc32b98bd02" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Java_PD/src/com/No5_grades/gradesManagement/Grade.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Java_PD/src/com/No5_grades/gradesManagement/Grade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java_PD/src/com/No5_grades/gradesManagement/Grades.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Java_PD/src/com/No5_grades/gradesManagement/Grades.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java_PD/src/com/No5_grades/gradesManagement/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Java_PD/src/com/No5_grades/gradesManagement/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java_PD/src/com/No5_grades/loggers/ConsoleLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Java_PD/src/com/No5_grades/loggers/ConsoleLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java_PD/src/com/No5_grades/loggers/FileLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Java_PD/src/com/No5_grades/loggers/FileLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java_PD/src/com/No5_grades/loggers/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Java_PD/src/com/No5_grades/loggers/Logger.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2OtJwawKkSZm7sk3pbJHgw5O66E" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "G:/progProjects/git/Nowaczek/lesson6",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="51a27d3a-a087-4c0d-a61a-8dc32b98bd02" name="Changes" comment="" />
+      <created>1682374183373</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682374183373</updated>
+      <workItem from="1682374184477" duration="36000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
