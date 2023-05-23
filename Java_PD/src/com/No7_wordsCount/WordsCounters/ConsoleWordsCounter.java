@@ -15,7 +15,6 @@ public class ConsoleWordsCounter extends BaseWordsCounter {
      * */
     public void setText(String text) {
         super.text = text;
-        super.wordFrequencyMap = new TreeMap<>();
         super.calculateCount();
     }
 }
