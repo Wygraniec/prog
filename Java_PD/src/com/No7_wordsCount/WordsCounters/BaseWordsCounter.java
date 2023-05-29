@@ -7,14 +7,14 @@ import java.util.TreeMap;
 /** An abstract class providing implementation of basic functions required for a class
  * calculating the number of occurrences of each word which is saved in the given text variable */
 abstract class BaseWordsCounter implements WordsCounter {
-    private Map<String, Integer> wordFrequencyMap = new TreeMap<>();
+    private final Map<String, Integer> wordFrequencyMap = new TreeMap<>();
     private String[] preparedText;
 
     /** Calculates the number of occurrences of a word in a given text and saving it in the frequency map */
     private void calculateCount() {
         if( !this.hasValues() ) return; // If there's no text, the function may be returned early
 
-        wordFrequencyMap = new TreeMap<>(); // Emptying the map
+        wordFrequencyMap.clear(); // Emptying the map
 
         for(String word : preparedText)
             wordFrequencyMap.put( word,
@@ -28,7 +28,7 @@ abstract class BaseWordsCounter implements WordsCounter {
      * @return prepared text
      * */
     private String[] prepareText(String text) {
-        return text.strip()                                         // Deleting unnecessary whitespace characters
+        return text.strip()                                         // Deleting unnecessary whitespace characters at the ends
                 .toLowerCase()                                      // Converting the text to Lower-Case to prevent counting the same word as two different
                 .replaceAll("[^a-z\\s]", "")        // Deleting all characters not being letters (or " " characters)
                 .replaceAll("\\s+"," ")             // Replace additional whitespace characters (if there's more than one in one place) with single space character
@@ -51,8 +51,7 @@ abstract class BaseWordsCounter implements WordsCounter {
 
     @Override
     public void printAllWordCounts() {
-        for ( Map.Entry<String, Integer> entry : wordFrequencyMap.entrySet() )
-            System.out.printf("%s -> %d\n", entry.getKey(), entry.getValue());
+        wordFrequencyMap.forEach( (key, value) -> System.out.printf("%s -> %d\n", key, value) );
     }
 
     @Override

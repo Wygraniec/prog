@@ -15,9 +15,11 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        var counter = new StringWordsCounter("");
         var stdin = new Scanner(System.in);
 
+        System.out.println("Podaj zdanie początkowe:");
+        var counter = new StringWordsCounter( stdin.nextLine() );
+        
         while(true) {
             printMenu();
             System.out.print("Wybór: ");
@@ -29,7 +31,13 @@ public class Main {
 
                 case 1 -> {
                     System.out.println("Wpisz nowy tekst do przeszukania");
-                    counter.changeText( stdin.nextLine() );
+
+                    try {
+                        counter.changeText(stdin.nextLine());
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Podane zdanie nie może być puste");
+                    }
+
                 }
 
                 case 2 -> counter.printAllWordCounts();
