@@ -16,6 +16,7 @@ public class Main {
 
     public static void main(String[] args) {
         var stdin = new Scanner(System.in);
+        System.out.println("Liczenie wystąpień każdego wyrazu z podanym tekście");
 
         System.out.println("Podaj zdanie początkowe:");
         var counter = new StringWordsCounter( stdin.nextLine() );
