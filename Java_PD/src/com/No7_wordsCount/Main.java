@@ -19,7 +19,7 @@ public class Main {
 
         System.out.println("Podaj zdanie początkowe:");
         var counter = new StringWordsCounter( stdin.nextLine() );
-        
+
         while(true) {
             printMenu();
             System.out.print("Wybór: ");
