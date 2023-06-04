@@ -1,14 +1,13 @@
-package com.No7_wordsCount.WordsCounters;
-
+package org.WordsCounter;
 import java.security.InvalidKeyException;
 import java.util.Map;
 import java.util.TreeMap;
 
-/** An abstract class providing implementation of basic functions required for a class
- * calculating the number of occurrences of each word which is saved in the given text variable */
-abstract class BaseWordsCounter implements WordsCounter {
+public class WordsCounter {
     private final Map<String, Integer> wordFrequencyMap = new TreeMap<>();
     private String[] preparedText;
+
+    public WordsCounter(String text) { setText(text); }
 
     /** Calculates the number of occurrences of a word in a given text and saving it in the frequency map */
     private void calculateCount() {
@@ -34,14 +33,14 @@ abstract class BaseWordsCounter implements WordsCounter {
                 .replaceAll("\\s+"," ")             // Replace additional whitespace characters (if there's more than one in one place) with single space character
                 .split(" ");                                  // Splitting the text by " " characters in order to extract every word
     }
-    
+
     /**
      * Changes the text being considered in counting and performs the operation
      * @param text New text to be processed
      * @throws IllegalArgumentException Throws such an exception if the text passed in as an argument
      *                                  is null or is an empty string
      * */
-    protected void setText(String text) throws IllegalArgumentException {
+    public void setText(String text) throws IllegalArgumentException {
         if( text == null || text.isBlank() )
             throw new IllegalArgumentException("Provided text must be neither empty nor a null");
 
@@ -49,12 +48,14 @@ abstract class BaseWordsCounter implements WordsCounter {
         calculateCount();
     }
 
-    @Override
     public void printAllWordCounts() {
         wordFrequencyMap.forEach( (key, value) -> System.out.printf("%s -> %d\n", key, value) );
     }
 
-    @Override
+    /**
+     * @param word Word for which the count shall be counted
+     * @return Number of occurrences of the word
+     * */
     public int getCountFor(String word) throws InvalidKeyException {
         if( !wordFrequencyMap.containsKey( word.toLowerCase().strip() ) )
             throw new InvalidKeyException("Provided word has not occurred in the text");
@@ -62,7 +63,6 @@ abstract class BaseWordsCounter implements WordsCounter {
         return wordFrequencyMap.get( word.toLowerCase().strip() );
     }
 
-    @Override
     public Boolean hasValues() {
         return preparedText != null;
     }
